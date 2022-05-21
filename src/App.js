@@ -1,5 +1,4 @@
 import { React } from 'react';
-import logo from './logo.svg';
 
 import styles from './App.module.css';
 import Hacks from "./Hacks";
@@ -45,7 +44,7 @@ function Home() {
         <button type="button" className={styles['hackButton']}>Commutr Hacks!</button>
         <Link to="/">Commutr Hacks!</Link>
 
-        <Switch>
+        {/* <Switch>
           <Route path='/Title'>
             <Title />
           </Route>
@@ -54,7 +53,7 @@ function Home() {
             <Hacks />
           </Route>
 
-        </Switch>
+        </Switch> */}
         
       </div>
     </Router>

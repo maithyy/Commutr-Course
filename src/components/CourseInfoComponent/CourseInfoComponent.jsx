@@ -1,4 +1,3 @@
-lines (18 sloc)  589 Bytes
 import { React } from 'react';
 import styles from './CourseInfoComponent.module.css'
 

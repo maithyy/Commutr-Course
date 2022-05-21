@@ -1,25 +1,64 @@
+import { React } from 'react';
 import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import styles from './App.module.css';
+import Hacks from "./Hacks";
+import Title from "./Title";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+// import CourseInputComponent from './components/courseInputComponent/CourseInputComponent';
+import CourseSelectionComponent from './components/CourseSelectionComponent/CourseSelectionComponent';
+import ScheduleComponent from './components/ScheduleComponent/ScheduleComponent';
+
+function Home() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className={styles['Home']}>
+        <div className={styles['title']}>
+          petr planner
+        </div>
+
+        <div className={styles['description']}>
+          welcome to petr planner, the perfect planning 
+          tool for Peter the Commuter and his friends. 
+          just enter your classes and we'll help you 
+          find the best schedule for minimizing days 
+          on campus and time between classes!
+        </div>
+
+        <div className={styles['boxes']}>
+          <div className={styles['course-selection']}>
+            <CourseSelectionComponent />
+          </div>
+          <div className={styles['schedule']}>
+            <ScheduleComponent scheduleNum={1}/>
+          </div>
+        </div>
+
+        <button type="button" className={styles['hackButton']}>Commutr Hacks!</button>
+        <Link to="/">Commutr Hacks!</Link>
+
+        <Switch>
+          <Route path='/Title'>
+            <Title />
+          </Route>
+
+          <Route path='/Hacks'>
+            <Hacks />
+          </Route>
+
+        </Switch>
+        
+      </div>
+    </Router>
   );
 }
 
-export default App;
+export default Home;

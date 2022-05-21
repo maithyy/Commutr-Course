@@ -1,0 +1,25 @@
+.course-selection-component-container {
+    background-color: rgb(191, 208, 170);
+    margin: 0em;
+    padding: 1em;
+    border-radius: 1em;
+    /* width: 70%; */
+    width: 150%;
+}
+
+.get-schedule-button {
+    background-color: #CFE1B9;
+    border-radius: 0.5em;
+    border: none;
+    padding: 1em;
+    position: relative;
+    left: 35%;
+}
+
+.get-schedule-button:hover {
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 0 0.25em 0.125em #88B552;
+    /* position: absolute;
+    left: 50%; */
+}

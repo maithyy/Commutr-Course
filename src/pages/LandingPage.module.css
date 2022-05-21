@@ -1,0 +1,33 @@
+.landing-page-container {
+    background-color: #F1F6EB;
+}
+
+.page-title {
+    font-size: 3em;
+    padding: 0.5em 0 0 1em;
+    margin: 0 0 2em 0;
+}
+
+.peter-planner-desc {
+    padding: 0 2em 0 2em;
+    max-width: 30%;
+    text-align: center;
+    position: relative;
+    left: 33%;
+
+}
+
+.peter-planner-link-container {
+    margin: 1em 1em 1em 1em;
+    padding: 5em 5em 40em 5em;
+}
+
+.peter-planner-link {
+    color: black;
+    font-weight: 2em;
+    text-decoration: none;
+    margin: 1em 1em 1em 1em;
+    padding: 1em 0 5em 0;
+    position: relative;
+    left: 45%;
+}

@@ -3,6 +3,8 @@ import { React } from 'react';
 import styles from './App.module.css';
 import Hacks from "./Hacks";
 import Title from "./Title";
+import LandingPage from "./pages/LandingPage";
+import PlannerPage from "./pages/PlannerPage";
 
 import {
   BrowserRouter as Router,
@@ -11,42 +13,16 @@ import {
   Link
 } from "react-router-dom";
 
-// import CourseInputComponent from './components/courseInputComponent/CourseInputComponent';
-import CourseSelectionComponent from './components/CourseSelectionComponent/CourseSelectionComponent';
-import ScheduleComponent from './components/ScheduleComponent/ScheduleComponent';
-
-function Home() {
-
+const Home = () => {
   return (
     <Router>
-      <div className={styles['Home']}>
-        <div className={styles['title']}>
-          petr planner
-        </div>
-
-        <div className={styles['description']}>
-          welcome to petr planner, the perfect planning
-          tool for Peter the Commuter and his friends.
-          just enter your classes and we'll help you
-          find the best schedule for minimizing days
-          on campus and time between classes!
-        </div>
-
-        <div className={styles['boxes']}>
-          <div className={styles['course-selection']}>
-            <CourseSelectionComponent />
-          </div>
-          <div className={styles['schedule']}>
-            <ScheduleComponent scheduleNum={1} />
-          </div>
-        </div>
-
+      <div>
         <Routes>
-          <Route path='/Title' exact element={<Title />
+          <Route path='/' element={<LandingPage />
           }>
           </Route>
 
-          <Route path='/Hacks' exact element={<Hacks />
+          <Route path='/planner' element={<PlannerPage />
           }>
           </Route>
 

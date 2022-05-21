@@ -2,7 +2,7 @@ import React from "react";
 
 function Hacks() {
     return (
-        <p>hello</p>
+        <p>hello from hacks</p>
     );
 }
 

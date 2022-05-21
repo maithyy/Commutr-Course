@@ -41,15 +41,12 @@ function Home() {
           </div>
         </div>
 
-        <button type="button" className={styles['hackButton']}>Commutr Hacks!</button>
-        <Link to="/">Commutr Hacks!</Link>
-
         <Routes>
-          <Route path='/Title' element={<Title />
+          <Route path='/Title' exact element={<Title />
           }>
           </Route>
 
-          <Route path='/Hacks' element={<Hacks />
+          <Route path='/Hacks' exact element={<Hacks />
           }>
           </Route>
 
@@ -59,5 +56,6 @@ function Home() {
     </Router>
   );
 }
+
 
 export default Home;

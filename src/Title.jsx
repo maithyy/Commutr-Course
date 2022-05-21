@@ -2,7 +2,7 @@ import React from "react";
 
 function Title() {
     return (
-        <p>hello</p>
+        <p>hello from title</p>
     );
 }
 

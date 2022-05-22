@@ -3,6 +3,8 @@ import { PropTypes } from 'prop-types';
 import { ArrowLeft, ArrowRight } from 'react-bootstrap-icons';
 import styles from './ScheduleComponent.module.css';
 import CourseInfoComponent from '../CourseInfoComponent/CourseInfoComponent';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const ScheduleComponent = ({scheduleNum, daysOnCampus, avgTime}) => {
     return (
@@ -57,11 +59,12 @@ const ScheduleComponent = ({scheduleNum, daysOnCampus, avgTime}) => {
             <div className={styles['view-schedule-buttons']}>
                 <button type="button" className={styles['get-schedule-button']}>
                     {/* <ArrowLeft className={styles['left-arrow']}/> */}
+                    <FontAwesomeIcon icon={faArrowLeft} className={styles['left-arrow']} />
                     previous schedule
                 </button>
                 <button type="button" className={styles['get-schedule-button']}>
                     next schedule
-                    {/* <ArrowRight className={styles['right-arrow']}/> */}
+                    <FontAwesomeIcon icon={faArrowRight} className={styles['right-arrow']}/>
                 </button>
             </div>
         </div>

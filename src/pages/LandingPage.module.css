@@ -65,3 +65,26 @@
 .link-text:hover {
     text-shadow: 0em 0em 1em #FD647B;
 }
+
+.rocket {
+    position: relative;
+    top: 0.130em;
+    left: 0.5em;
+    animation-name: rocket-icon;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rocket-icon {
+    /* 0% {top: 500px;
+        left: 100px;}
+    20% {top: 400px;
+        left: 200px;}
+    50% {top: 300px;
+        left: 300px;}
+    75% {top: 250px;
+        left: 400px;}
+    100% {top: 225px;
+        left: 500px;} */
+}

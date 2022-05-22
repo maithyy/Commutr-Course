@@ -94,4 +94,9 @@
     width: 1em;
     display: grid;
     grid: 1fr;
+    }
+
+    .arrow-pointer {
+      margin-left: 0.5em;
 }
+

@@ -1,5 +1,6 @@
 import { React } from 'react';
 import { PropTypes } from 'prop-types';
+import { ArrowLeft, ArrowRight } from 'react-bootstrap-icons';
 import styles from './ScheduleComponent.module.css';
 import CourseInfoComponent from '../CourseInfoComponent/CourseInfoComponent';
 
@@ -7,7 +8,7 @@ const ScheduleComponent = ({scheduleNum, daysOnCampus, avgTime}) => {
     return (
         <div className={styles['schedule-component-container']}>
             <div className={styles['schedule-info-header']}>
-                <div className={styles['schedule-num']}><i>schedule #{scheduleNum}</i></div>
+                <div className={styles['schedule-num']}><i><b>schedule #{scheduleNum}</b></i></div>
                 <div className={styles['schedule-days-on-campus']}>
                     days on campus: {daysOnCampus}
                 </div>
@@ -52,6 +53,16 @@ const ScheduleComponent = ({scheduleNum, daysOnCampus, avgTime}) => {
                     where={"HIB 100"}
                     className={styles['individual-course']}
                 />
+            </div>
+            <div className={styles['view-schedule-buttons']}>
+                <button type="button" className={styles['get-schedule-button']}>
+                    {/* <ArrowLeft className={styles['left-arrow']}/> */}
+                    previous schedule
+                </button>
+                <button type="button" className={styles['get-schedule-button']}>
+                    next schedule
+                    {/* <ArrowRight className={styles['right-arrow']}/> */}
+                </button>
             </div>
         </div>
     )

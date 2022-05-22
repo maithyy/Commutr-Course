@@ -11,13 +11,13 @@ function PlannerPage() {
     return (
         <div className={styles['Home']}>
             <div className={styles['title']}>
-            petr planner
+            commuter course
             </div>
 
             <div className={styles['boxes']}>
                 <div className={styles['left']}>
                     <div className={styles['description']}>
-                    welcome to petr planner, the perfect planning
+                    welcome to commuter course, the perfect planning
                     tool for Peter the Commuter and his friends.
                     just enter your classes and we'll help you
                     find the best schedule for minimizing days

@@ -185,8 +185,24 @@ const CourseInputComponent = ( {classNum} ) => {
         <div className={styles['course-input-component-container']}>
             <div className={'class-number-desc'}><i>class #{classNum}</i></div>
             {/* <div>{classNumber}</div> */}
-            <label for="department-name-input" className={styles['input-label']}>Department:</label>
-            <input form="text" name="department-name-input" className={styles['input-text-field']}></input>
+            <div className={styles["input-container"]}>
+                <label for="department-name-input" className={styles['input-label']}>Department:</label>
+                <input 
+                    form="text"
+                    name="department-name-input"
+                    className={styles['input-text-field']}
+                    placeholder={"e.g., I&C SCI"}
+                >
+                </input>
+                <label for="course-number-input" className={styles['input-label']}>Course Number:</label>
+                <input
+                    form="text"
+                    name="course-number-input"
+                    className={styles['input-text-field']}
+                    placeholder={"e.g., 45C"}
+                >
+                </input>
+            </div>
             {/* <Dropdown
             onSelect={(eventKey) => {
                 console.log(eventKey);
@@ -206,9 +222,7 @@ const CourseInputComponent = ( {classNum} ) => {
                     <DropdownOptions />
                 </Dropdown.Menu>
             </Dropdown> */}
-            <br></br>
-            <label for="course-number-input" className={styles['input-label']}>Course Number:</label>
-            <input form="text" name="course-number-input" className={styles['input-text-field']}></input>
+            {/* <br></br> */}
         </div>
     );
 }

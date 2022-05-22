@@ -1,11 +1,11 @@
 .schedule-component-container {
-    margin: 1em 1em 0 1em;
+    margin: 1em 1em 0 15em;
     padding: 1em;
     border-radius: 1em;
     width: 150%;
     position: relative;
     top: 0em;
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 .schedule-info-header {
@@ -13,7 +13,7 @@
     border-radius: 1em;
     padding: 1em 1em 1em 1em;
     margin: 1em 1em 1em 1em;
-    width: 88%;
+    width: 92.5%;
 }
 
 .schedule-number {
@@ -23,10 +23,14 @@
 }
 
 .courses-container {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    background-color: red;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0px;
+    column-gap: 0px;
+    /* background-color: red; */
 }
 
 .individual-course {
@@ -35,4 +39,51 @@
     flex: 100%;
     flex-grow: 1;
     /* padding: 0 10em 0 5em; */
+}
+
+.view-schedule-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    right: 100px;
+}
+
+.get-schedule-button {
+    display: flex;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    left: 250px;
+    top: 50px;
+    animation-name: get-schedule-button;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+  }
+
+  @keyframes get-schedule-button {
+    0% {margin: 1em 1em 1em 1em;}
+    20% {margin: 1.75em 1em 1em 1em;}
+    50% {margin: 1em 1em 1em 1em;}
+    75% {margin: 0.25em 1em 1em 1em;}
+    100% {margin: 1em 1em 1em 1em;}
+}
+
+  .get-schedule-button:hover {
+    text-shadow: 0em 0em 1em #FD647B;
+    cursor: pointer;
+}
+
+.left-arrow {
+    margin-right: 0.5em;
+}
+
+.right-arrow {
+    margin-left: 0.5em;
 }

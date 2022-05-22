@@ -9,25 +9,54 @@
 }
 
 .peter-planner-desc {
+    margin: 7em 0 0 0;
     padding: 0 2em 0 2em;
     max-width: 30%;
     text-align: center;
     position: relative;
     left: 33%;
+    top: 100%;
 
 }
 
 .peter-planner-link-container {
     margin: 1em 1em 1em 1em;
-    padding: 5em 5em 40em 5em;
+    padding: 5em 5em 35em 5em;
 }
 
 .peter-planner-link {
     color: black;
-    font-weight: 2em;
+    font-weight: 700;
     text-decoration: none;
     margin: 1em 1em 1em 1em;
-    padding: 1em 0 5em 0;
+    padding: 1.5em 1em 1em 1em;
     position: relative;
-    left: 45%;
+    left: 44%;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: row;
+    animation-name: link;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes link {
+    0% {margin: 1em 1em 1em 1em;}
+    20% {margin: 1.75em 1em 1em 1em;}
+    50% {margin: 1em 1em 1em 1em;}
+    75% {margin: 0.25em 1em 1em 1em;}
+    100% {margin: 1em 1em 1em 1em;}
+}
+
+.link-icon {
+    margin-right: 0.25em;
+    margin-top: 0.25em;
+    /* background-color: red; */
+    position: relative;
+    top: 0%;
+}
+
+.link-text:hover {
+    text-shadow: 0em 0em 1em #6A8F3D;
 }

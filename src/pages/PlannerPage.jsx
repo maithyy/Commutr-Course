@@ -13,19 +13,28 @@ function PlannerPage() {
             <div className={styles['title']}>
             petr planner
             </div>
-    
-            <div className={styles['description']}>
-            welcome to petr planner, the perfect planning
-            tool for Peter the Commuter and his friends.
-            just enter your classes and we'll help you
-            find the best schedule for minimizing days
-            on campus and time between classes!
-            </div>
-    
+
             <div className={styles['boxes']}>
-                <div className={styles['course-selection']}>
-                    <CourseSelectionComponent />
+                <div className={styles['left']}>
+                    <div className={styles['description']}>
+                    welcome to petr planner, the perfect planning
+                    tool for Peter the Commuter and his friends.
+                    just enter your classes and we'll help you
+                    find the best schedule for minimizing days
+                    on campus and time between classes!
+                    </div>
+
+                    <div className={styles['title-tag']}>
+                        enter your classes:
+                    </div>
+                    
+                    <div className={styles['course-selection']}>
+                        <CourseSelectionComponent />
+                    </div>
+                    
+                    <button type="button" className={styles['get-schedule-button']}>get schedule</button>
                 </div>
+
                 <div className={styles['schedule']}>
                     <ScheduleComponent scheduleNum={1} />
                 </div>

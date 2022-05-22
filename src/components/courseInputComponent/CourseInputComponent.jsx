@@ -183,7 +183,7 @@ const CourseInputComponent = ( {classNum} ) => {
 
     return (
         <div className={styles['course-input-component-container']}>
-            <div className={'class-number-desc'}><i>Class #{classNum}</i></div>
+            <div className={'class-number-desc'}><i>class #{classNum}</i></div>
             {/* <div>{classNumber}</div> */}
             <label for="department-name-input" className={styles['input-label']}>Department:</label>
             <input form="text" name="department-name-input" className={styles['input-text-field']}></input>

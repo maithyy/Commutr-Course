@@ -1,18 +1,26 @@
 .course-info-component-container {
-    background-color: #eae0cf;
-    display: flex;
-    flex-direction: row;
+    background-color: #D8CDB9;
+    /* display: flex;
+    flex-direction: row; */
     border-radius: 1em;
     margin: 1.5em;
     padding: 1em;
+    /* width: 100%; */
 
 }
 
 .course-logistics {
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
-.course-code {
+.individual-info {
+    flex-grow: 100%;
+}
+
+/* .course-code {
     text-align: right;
     padding: 0 0 0 4em;
-}
+    flex-grow: 1;
+} */

@@ -41,6 +41,10 @@ function dataStructure(coursedata){
         let section_type = section['sectionType']
         let days = section['meetings'][0]['days']
         let times = convertTime(section['meetings'][0]['time'])
+        let display_time = sect['meetings'][0]['time']
+        let instructor_name = sect['instructors'][0]
+        let building = sect['meetings'][0]['bldg']
+        let course_title = data['schools'][0]['departments'][0]['courses'][0]['courseTitle']
         if (!isNaN(section)){
             section_num = starting_section + section_num
         }
@@ -49,8 +53,12 @@ function dataStructure(coursedata){
             'sectionCode': section_code,
             'sectionType': section_type,
             'days': days,
-            'times': times
-        }
+            'times': times,
+            'display_time': display_time,
+            'instructor_name': instructor_name,
+            'building': building,
+            'course_title': course_title
+            }
 
         if (/^[a-zA-Z]+$/.test(section_num)){
             if (secondary.length !== 0){
@@ -73,12 +81,54 @@ function dataStructure(coursedata){
     return course_sections
 } //test for errors here, if it returns [[], []], it did not work
 
+function getTimeDays(schedule){
+    let total_time = 0
+    let days = 0
+
+    let day_times = {
+        'M': [],
+        'Tu': [],
+        'W': [],
+        'Th': [],
+        'F': []
+    }
+
+    schedule.forEach(function(course){
+        Object.values(day_times).forEach(function(key){
+            if (course[0]['days'].includes(key)){
+                day_times[key].push(course[0]['times'])
+            }
+        })
+    })
+    Object.values(day_times).forEach(function(times){
+        if (times) {
+            days += 1
+            times.sort();
+            total_time += times[times.length - 1][1] - times[0][0]
+        }
+    })
+    return [schedule, days, total_time/days]
+}
+
+
+function optimizedSchedules(possible_schedules){
+    let sortedSched = possible_schedules.map(sched => getTimeDays(sched))
+    sortedSched = sortedSched.sort(function compareFn(a, b){
+        return b[1] - a[1]
+    })
+    sortedSched = sortedSched.sort(function compareFn(a, b) {
+        return a[2] - b[2]
+    })
+    return sortedSched
+}
+
 //api_data is [result.data of class 1, result.data of class 2, result.data of class 3]
 function makeSchedule(api_data){
     let my_course_data = [dataStructure(api_data[0]), dataStructure(api_data[1]), dataStructure(api_data[2])]
     let all_course_combos = createCourseCombos(my_course_data)
     let all_possible_schedules = possibleSchedules(all_course_combos)
-    return all_possible_schedules
+    let sorted_possibles = optimizedSchedules(all_possible_schedules)
+    return sorted_possibles
 } //returns a list of all the possible schedules in the format [schedule1, schedule2, schedule3, ...]
 //each schedule is a nested list and looks like [course1 lec and dis pair, course2 lec and dis pair, course3 lec and dis pair]
 //each course lec and dis pair looks like [lec, dis], sometimes there's no discussion so it would be empty and look like [lec, []]
